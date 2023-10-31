@@ -13,6 +13,11 @@ function Navbar(props) {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const changeMobileMenuState = (state) => {
+        setIsMobileMenuOpen(state);
+        isMobileMenuOpen ? (toast.success('Mobile menu is opened')) : (toast.success('Mobile menu is closed'));
+    }
+
   return (
     <div className='flex justify-between items-center sm:w-11/12 sm:max-w-[1160px] w-full py-4 px-2 sm:px-0 mx-auto relative'>
         <Link to="/">
@@ -22,16 +27,16 @@ function Navbar(props) {
         {/* -------------- mobile view -------------- */}
 
         <FiMenu
-          onClick={() => setIsMobileMenuOpen(true)}
+          onClick={() => changeMobileMenuState(true)}
           className="text-3xl cursor-pointer sm:hidden text-richblack-25"
         />
 
-        <div className={`fixed h-screen w-screen sm:hidden backdrop-blur-sm top-0 right-0 translate-x-full  transition-all duration-700 z-50 ${isMobileMenuOpen && "translate-x-0"}`}>
+        <div className={`fixed h-screen w-screen sm:hidden backdrop-blur-sm top-0 right-0 translate-x-full  transition-all duration-700 z-50 ${isMobileMenuOpen && "-translate-x-0"}`}>
 
             <div className='text-black bg-white absolute right-0 top-0 h-screen p-8 gap-8 z-50 w-56 flex flex-col'>
 
                 <IoCloseOutline
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => changeMobileMenuState(false)}
                 className="mt-0 mb-8 text-3xl cursor-pointer"
                 />
 
