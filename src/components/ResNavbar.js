@@ -26,7 +26,7 @@ function Navbar(props) {
           className="text-3xl cursor-pointer sm:hidden text-richblack-25"
         />
 
-        <div className={`fixed h-screen w-screen sm:hidden backdrop-blur-sm top-0 right-0 translate-x-full  transition-all duration-700 z-50 ${isMobileMenuOpen && "translate-x-0"}`}>
+        <div className={`fixed h-screen w-screen sm:hidden backdrop-blur-sm top-0 right-0 translate-x-full  transition-all duration-700 z-50 ${isMobileMenuOpen && "-translate-x-0"}`}>
 
             <div className='text-black bg-white absolute right-0 top-0 h-screen p-8 gap-8 z-50 w-56 flex flex-col'>
 
